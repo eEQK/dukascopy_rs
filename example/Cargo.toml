@@ -1,0 +1,12 @@
+[package]
+name = "dukascopy_rs_example"
+version = "0.1.0"
+edition = "2021"
+resolver = "2"
+
+[dependencies]
+time = { version = "0.3.9", features = ["macros", "std"] }
+futures = "0.3.21"
+tokio = { version = "1", features = ["full"] }
+dukascopy_rs = { path = "../lib", features = ["serde"] }
+serde_json = "1.0.79"
