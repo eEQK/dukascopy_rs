@@ -1,6 +1,6 @@
 # dukascopy-rs
 
-[![github]](https://github.com/eEQK/dukascopy_rs)[![crates-io]](https://crates.io/crates/dukascopy_rs)&ensp;[![docs-rs]](https://docs.rs/dukascopy_rs)
+[![github]](https://github.com/eEQK/dukascopy_rs)&nbsp;[![crates-io]](https://crates.io/crates/dukascopy_rs)&nbsp;[![docs-rs]](https://docs.rs/dukascopy_rs)
 
 [github]: https://img.shields.io/badge/github-8da0cb?style=for-the-badge&labelColor=555555&logo=github
 [crates-io]: https://img.shields.io/badge/crates.io-fc8d62?style=for-the-badge&labelColor=555555&logo=rust
@@ -23,11 +23,7 @@ async fn main() {
             datetime!(2020-03-12 15:00),
         )
         .try_for_each(|e| async move {
-            let serialized = serde_json::to_string(&e).unwrap();
-            println!("{}", serialized);
-
             println!("{}", e);
-
             Ok(())
         })
         .await
@@ -39,7 +35,10 @@ _source: example/main.rs_
 
 For details on what are the possible inputs/outputs, please have a look on `download_ticks` method documentation. 
 
+### Optional cargo features
+* serde - enables serialization support for `Tick` struct
+
 ### TODO
 
 * support for any date and time (not only full hours)
-* DataSupplier that retries requests upon failure
+* `DataSupplier` that retries requests upon failure

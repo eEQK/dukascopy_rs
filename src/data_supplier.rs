@@ -3,7 +3,7 @@ use bytes::Bytes;
 
 use crate::error::Kind;
 
-/// An interface used by [DukascopyService](DukascopyService) to fetch
+/// An interface used by [DukascopyService](crate::DukascopyService) to fetch
 /// the data for further processing
 #[async_trait]
 pub trait DataSupplier {

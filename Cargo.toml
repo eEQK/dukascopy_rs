@@ -1,6 +1,38 @@
-[workspace]
+[package]
+name = "dukascopy_rs"
+version = "0.1.2"
+edition = "2021"
+resolver = "2"
 
-members = [
-    "lib",
-    "example",
+description = "Dukascopy API integration for Rust"
+license-file = "LICENSE"
+repository = "https://github.com/eEQK/dukascopy_rs"
+keywords = ["dukascopy", "trading", "trade", "tick"]
+categories = ["api-bindings"]
+
+exclude = [
+    "test-resources",
 ]
+
+[workspace]
+members = ["example"]
+
+[dependencies]
+time = { version = "0.3.9", features = ["macros", "std"] }
+reqwest = { version = "0.11" }
+futures = "0.3.21"
+byteorder = "1.4.3"
+lzma-rs = "0.2.0"
+bytes = "1.1.0"
+async-trait = "0.1.53"
+tokio = { version = "1", features = ["full"] }
+
+serde = { version = "1.0", optional = true, features = ["derive"] }
+
+[dev-dependencies]
+warp = "0.3"
+tokio-test = "0.4.2"
+approx = "0.5.1"
+
+[badges]
+maintenance = { status = "experimental" }
